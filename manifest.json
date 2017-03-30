@@ -1,0 +1,25 @@
+{
+	"manifest_version":2,
+	"name":"ziroom_room_layout",
+	"description":"room layout frontgrab",
+	"version":"1.0",
+	"browser_action":{
+		"default_icon":"icon.png",
+		"default_popup":"popup.html"
+	},
+	"background": {
+	    "scripts": ["eventPage.js"],
+    	"persistent": false
+	},
+	"permissions":[
+		"tabs",
+		"http://*.zirooom.com/"
+	],
+	"content_scripts":[
+		{
+			"matches": ["http://*.ziroom.com/z/nl/*"],
+			"js": ["myscript.js"],
+			"run_at": "document_end"
+		}	
+	]
+}
